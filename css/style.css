@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
 
 * {
 	margin: 0;
@@ -16,7 +17,7 @@ li {
 
 :root {
 	--poppins: 'Poppins', sans-serif;
-	--lato: 'Lato', sans-serif;
+	--Roboto: 'Roboto', sans-serif;
 
 	--light: #FFF;
 	--blue: #3C91E6;
@@ -52,11 +53,11 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 280px;
+	width: 220px;
 	height: 100%;
 	background: var(--light);
 	z-index: 2000;
-	font-family: var(--lato);
+	font-family: var(--Roboto);
 	transition: .3s ease;
 	overflow-x: hidden;
 	scrollbar-width: none;
@@ -76,17 +77,45 @@ body {
     display: flex;
     justify-content: center;
     color: var(--dark);
+    
 }
 
 #sidebar .side-menu {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 30px;
+
 } 
+
 #sidebar .side-menu li {
-    height: 48px;
+    height: 55px;
     background: var(--light) ;
-    margin-left: 6px;
+    margin-left: 0px;
     border-radius: 48px 0 0 48px;
+    padding: 0px;
 } 
+#sidebar .side-menu li a:hover{
+  
+  background-color: var(--yellow); 
+  border: none;
+  color: var(--dark);
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+ } 
+#sidebar .side-menu li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    padding: 4px;
+} 
+
+#sidebar .side-menu li i {
+    padding: 20px;
+} 
+#sidebar .side-menu .bottom {
+margin-top: 200px;
+
+}
 
 /* SIDEBAR */
