@@ -125,7 +125,7 @@ margin-top: 100px;
 #content {
 	position: fixed;
 	width: calc(100% - 280px);
-	left: 280px;
+	left: 245px;
 	transition: .3s ease;
 }
 #sidebar.hide ~ #content {
@@ -138,10 +138,9 @@ margin-top: 100px;
 #content nav {
 	height: 56px;
 	background: var(--light);
-	padding: 0 24px;
 	display: flex;
 	align-items: center;
-	grid-gap: 6px;
+	grid-gap: 0px;
 	font-family: var(--lato);
 	position: sticky;
 	top: 0;
@@ -199,15 +198,16 @@ margin-top: 100px;
 
 
 #content nav .profile img {
-	width: 36px;
-	height: 36px;
+	width: 34px;
+	height: 34px;
 	object-fit: cover;
 	border-radius: 50%;
+	border: solid #f1f1f1;
 }
 #content nav .profile {
 	font-weight: 100;
     text-align: center;
-	padding-left: 700px;
+	padding-left: 800px;
    
 }
 
