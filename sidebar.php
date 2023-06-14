@@ -33,7 +33,7 @@ include "header.php";
     <span class="text">Users</span>
     </a>
 </li>
-<li>
+<li class="side-menu bottom">
     <a href="#"> 
     <i class="fa-solid fa-gear"></i>
     <span class="text">Settings</span>
@@ -45,11 +45,8 @@ include "header.php";
     <span class="text">Logout</span>
     </a>
 </li>
+</ul>
+</section>
 
-        </ul>
-
-
-
-    </section>
 </body>
 </html>
