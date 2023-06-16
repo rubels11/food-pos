@@ -10,7 +10,7 @@ include "header.php";
         </a>
         <ul class="side-menu top">
 <li>
-    <a href="#"> 
+    <a href="dashboard.php"> 
     <i class="fa-solid fa-chart-pie"></i>
     <span class="text">Dashboard</span>
     </a>
