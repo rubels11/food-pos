@@ -249,7 +249,7 @@ margin-top: 100px;
 #content main {
 	width: 100%;
 	padding: 36px 24px;
-	font-family: var(--poppins);
+	font-family: var(--Roboto);
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
 }
@@ -324,3 +324,12 @@ margin-top: 100px;
 	text-align: center;	
 	padding-bottom: 15px;
 }
+#content div.table-data table{
+	display: grid;
+	justify-content: start;
+
+}
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }

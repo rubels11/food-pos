@@ -20,7 +20,7 @@ include "navbar.php";
 				<li>
 					
 					<span class="text">
-                    <p>Monthly Visitors</p>
+                    <p>Monthly Customers</p>
 						<h3>16</h3>
 					</span>
 				</li>
@@ -35,11 +35,31 @@ include "navbar.php";
 					
 					<span class="text">
 					<p>Monthly Income</p>
-						<h3>1020</h3>
+						<h3>$1020</h3>
 					</span>
 				</li>
 			</ul>
 		</main>
+        
+        <div class="table-data">
+        <table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>View</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>View Order</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>View Order</td>
+    <td>Pending</td>
+  </tr>
+</table>
+</div>
 		<!-- MAIN -->
 
 
