@@ -7,6 +7,9 @@ include "navbar.php";
 ?>
 
 <section id="content">
+
+
+
 <!-- MAIN -->
 <main>
                 <ul class="box-info">
@@ -39,26 +42,41 @@ include "navbar.php";
 					</span>
 				</li>
 			</ul>
+
+            
 		</main>
+
+         
+      <div class="row">
         
-        <div class="table-data">
-        <table id="customers">
-  <tr>
-    <th>Name</th>
-    <th>View</th>
-    <th>Status</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>View Order</td>
-    <td>Pending</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbköp</td>
-    <td>View Order</td>
-    <td>Pending</td>
-  </tr>
-</table>
+        <div class="col-6">
+        <div class="data-title">
+<h4>Latest Order</h4>
+<div class="data-table">
+<ul>
+    <li>
+        <a href="#">Mahmud Hasan</a>
+        
+    </li>
+    <li>
+        <a href=""> View Order
+</a>
+    </li>
+    <li>
+        <a href="#">Pending</a>
+    </li>
+</ul>
+</div>
+
+        </div> 
+        </div>
+        <div class="col-6">
+        <h3>This content will take up 3/12 (or 1/4) of the container</h3> 
+        </div>
+      </div>
+    
+
+
 </div>
 		<!-- MAIN -->
 
