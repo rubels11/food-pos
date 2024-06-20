@@ -517,12 +517,145 @@ border-radius: 5px;
 
 
   }
-.data-table ul li {
-	font-family: var(--Roboto);
-	font-size: 14px;
-	font-weight: 500;
+  .data-table ul {
+	list-style-type: none;
+	padding: 0;
+}
+.data-table li {
 	display: inline-block;
-    padding-right: 40px;
-    margin-top: 30px;
+	width: 30%;
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+}
+.data-table li a {
+	text-decoration: none;
+	color: #333;
+}
+.data-table li:nth-child(3n+3) {
+	width: 10%;
+}
+.data-table th, .data-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+.data-table th {
+	background-color: #f2f2f2;
+	text-align: left;
+}
+.data-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+.data-table tr:hover {
+	background-color: #f1f1f1;
+}
+#user {
+
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 60px;
+  }
+  
+  #user td, #user th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #user tr:nth-child(even){background-color: #f2f2f2;}
+  
+
+  
+  #user th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #ffa928;
+	color: white;
+  }
+  .action-buttons {
+	display: flex;
+	gap: 5px;
+}
+.update-button {
+	background-color: #4CAF50;
+	color: white;
+}
+.delete-button {
+	background-color: #f44336;
+	color: white;
+}
+.modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto; 
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; 
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #ffffff;
+    border: 0px solid #ccc;
+    border-radius: 5px;
 }
 
+form .form-group {
+    margin-bottom: 1em;
+}
+
+form label {
+    margin-bottom: .5em;
+    color: #333333;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select,
+form textarea {
+    border: 1px solid #ccc;
+    padding: .5em;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
