@@ -1,8 +1,24 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['id'])) {
+    // Redirect to login page if user ID is not set in session
+    
+}
+$GLOBALS['title'] = 'Food POS Admin';
+$GLOBALS['desc'] = 'Test';
+$GLOBALS['keywords'] ='keyword, keywords, keys';
+
+    ?>
+
+
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
@@ -11,14 +27,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <?php
-
-$GLOBALS['title'] = 'Food POS Admin';
-$GLOBALS['desc'] = 'Test';
-$GLOBALS['keywords'] ='keyword, keywords, keys';
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-    ?>
+   
 </head>
 

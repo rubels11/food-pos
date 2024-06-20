@@ -2,7 +2,7 @@
 require 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_id"])) {
-    $user_id = $_POST["user_id"];
+    $user_id = $_POST["id"];
 
     // Prepare the SQL statement to avoid SQL injection
     $sql = "DELETE FROM users WHERE id = ?";

@@ -1,7 +1,7 @@
 <?php
-session_start();
+require 'header.php';
 require 'config.php';
-require 'header.php'; // Include your database connection
+ // Include your database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['userid'] = $id;
+            $_SESSION['id'] = $id;
             $_SESSION['username'] = $username;
             header("Location: dashboard.php"); // Redirect to dashboard
             exit;
@@ -42,6 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button type="submit">Login</button>
 </form>
 </div>
+
+
 
 
 

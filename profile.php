@@ -5,25 +5,23 @@ include "sidebar.php";
 include "navbar.php";
 require 'config.php';
 
-// Start session to get user ID
-
-
-// Assuming user is logged in and user ID is stored in session
 
 
 // Fetch user data from database
 $sql = "SELECT username, email FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("i", $id);
 $stmt->execute();
 $stmt->bind_result($username, $email);
 $stmt->fetch();
 $stmt->close();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<body>
 <div class="container mt-5">
-   
     <form id="profileForm">
         <div class="form-group">
             <label for="profile-username">Username</label>
