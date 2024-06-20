@@ -1,6 +1,7 @@
 <?php
 session_start();
-require 'config.php'; // Include your database connection
+require 'config.php';
+require 'header.php'; // Include your database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -33,8 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+    
+<div>
 <form method="post" action="login.php">
     Username: <input type="text" name="username" required>
     Password: <input type="password" name="password" required>
     <button type="submit">Login</button>
 </form>
+</div>
+
+
+
+

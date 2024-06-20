@@ -93,34 +93,36 @@ $result = $conn->query($sql);
         </div>
       </div>
     </div>
-
-    <!-- Delete Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Delete User</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form id="deleteForm" action="delete_user.php" method="POST">
-            <div class="modal-body">
-              <input type="hidden" id="delete-user-id" name="user_id">
-              <p>Are you sure you want to delete this user?</p>
+ <!-- Delete Modal -->
+ <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="deleteForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="delete-user-id" name="user_id">
+                        <p>Are you sure you want to delete this user?</p>
+                        <div id="delete-success-message" class="success-message" style="display:none;">
+                            User deleted successfully.
+                        </div>
+                        <div id="delete-error-message" class="error-message" style="display:none;">
+                        User deleted successfully.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $('#updateModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
@@ -141,12 +143,6 @@ $result = $conn->query($sql);
             var modal = $(this);
             modal.find('#delete-user-id').val(userId);
         });
-        function openUpdateModal(user) {
-            document.getElementById('update-user-id').value = user.id;
-            document.getElementById('update-username').value = user.username;
-            document.getElementById('update-email').value = user.email;
-            $('#updateModal').modal('show');
-        }
 
         $(document).ready(function() {
             $('#updateForm').on('submit', function(event) {
@@ -157,16 +153,56 @@ $result = $conn->query($sql);
                     method: 'POST',
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#update-success-message').show();
+                        if (response.status === "success") {
+                            $('#update-success-message').show();
+                            setTimeout(function() {
+                                $('#update-success-message').hide();
+                                $('#updateModal').modal('hide');
+                                location.reload(); // Reload the page to reflect the changes
+                            }, 2000);
+                        } else {
+                            $('#update-error-message').text(response.message).show();
+                        }
                     },
                     error: function() {
-                        alert('Failed to update user');
+                        $('#update-error-message').show();
+                    }
+                });
+            });
+
+            $('#deleteForm').on('submit', function(event) {
+                event.preventDefault();
+
+                $.ajax({
+                    url: 'delete_user.php',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.status === "success") {
+                            $('#delete-success-message').show();
+                            setTimeout(function() {
+                                $('#delete-success-message').hide();
+                                $('#deleteModal').modal('hide');
+                                location.reload(); // Reload the page to reflect the changes
+                            }, 2000);
+                        } else {
+                            $('#delete-error-message').text(response.message).show();
+                        }
+                    },
+                    error: function() {
+                        $('#delete-error-message').show();
                     }
                 });
             });
 
             $('#updateModal').on('hidden.bs.modal', function () {
                 $('#update-success-message').hide(); // Hide success message on modal close
+                $('#update-error-message').hide(); // Hide error message on modal close
+            });
+
+            $('#deleteModal').on('hidden.bs.modal', function () {
+                $('#delete-success-message').hide(); // Hide success message on modal close
+                $('#delete-error-message').hide(); // Hide error message on modal close
             });
         });
     </script>
